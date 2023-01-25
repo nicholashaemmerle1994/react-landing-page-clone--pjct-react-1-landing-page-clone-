@@ -3,6 +3,7 @@
 import { css } from '@emotion/react';
 
 const headerSectionStyle = css`
+  width: 80vw;
   background-color: black;
   display: flex;
   align-items: center;
@@ -14,16 +15,16 @@ const navigationMenuStyle = css`
   list-style-type: none;
   display: flex;
   gap: 30px;
-  font-family: 'Varela Round', sans-serif;
   line-height: 20px;
   padding: 20px;
   justify-content: space-around;
   li {
     > a {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
       text-decoration: none;
       color: white;
       padding: 0px 50px;
-      font-weight: 900;
     }
   }
 `;
@@ -40,12 +41,9 @@ const h1Styles = css`
 
 const descriptionStyles = css`
   margin-top: 50px;
-  position: relative;
-  max-width: 100%;
+  max-width: 1440px;
   margin-bottom: 40px;
   align-self: center;
-  flex: 0 0 auto;
-  left: 6ya0px;
   margin-bottom: 160px;
 `;
 
@@ -58,15 +56,17 @@ const descriptionTextStyles = css`
 `;
 
 const smartphoneStyles = css`
-  width: 600px;
+  width: 700px;
 `;
 const descriptsection = css`
+  padding-top: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const button1 = css`
+  border: 0;
   margin-top: 40px;
   margin-right: 20px;
   font-weight: 900;
@@ -80,6 +80,7 @@ const button1 = css`
   color: #e63963;
 `;
 const button2 = css`
+  border: 0;
   font-weight: 900;
   height: 60px;
   width: 200px;
@@ -90,32 +91,42 @@ const button2 = css`
   color: white;
   border: 1x solid black;
 `;
+const navDiv = css`
+  size: 100vw;
+  display: flex;
+  background-color: black;
+  position: fixed;
+  z-index: 2;
+  box-shadow: 0px 10px 20px 5px black;
+`;
 
-export default function FirstComponent() {
+export default function HeadComponent() {
   return (
     <div>
       <header>
-        <div css={headerSectionStyle}>
-          <div>
-            <img
-              style={{ width: '100px' }}
-              src="https://uploads-ssl.webflow.com/630e348760dd00665a03452e/630e348760dd00d247034585_Logo%20for%20web.svg"
-              alt="logo"
-            />
+        <div css={navDiv}>
+          <div css={headerSectionStyle}>
+            <div>
+              <img
+                style={{ width: '100px' }}
+                src="https://uploads-ssl.webflow.com/630e348760dd00665a03452e/630e348760dd00d247034585_Logo%20for%20web.svg"
+                alt="logo"
+              />
+            </div>
+            <nav>
+              <ul css={navigationMenuStyle}>
+                <li>
+                  <a href="/#">Get in touch</a>
+                </li>
+                <li>
+                  <a href="/#">About</a>
+                </li>
+                <li>
+                  <a href="/#">Join our team</a>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <nav>
-            <ul css={navigationMenuStyle}>
-              <li>
-                <a href="/#">Get in touch</a>
-              </li>
-              <li>
-                <a href="/#">About</a>
-              </li>
-              <li>
-                <a href="/#">Join our team</a>
-              </li>
-            </ul>
-          </nav>
         </div>
         {/* description Part with Smartphone img */}
         <div css={descriptsection}>
